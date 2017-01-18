@@ -1,0 +1,23 @@
+/* --footer */
+
+	.footer {
+		.transform( scaleY(-1) );
+		.vertical-gradient(#005977, 0%, #00befe, 100%);
+		.footerinner {
+			min-height:100px;
+			background:url('../img/header.svg') no-repeat 50% 100%;
+			background-size:auto 75%;
+		}
+	}
+
+@media @tabletWidth{
+}
+
+@media @mobileWidth{
+	.footer {
+		.footerinner {
+			background-size:auto 60%;
+			background-position:30% 100%;
+		}
+	}
+}
