@@ -28,6 +28,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/assets/icons/style.css"/>
+    <link rel="stylesheet" type="text/css" href="static/assets/extracss/codepen-embed.css"/>
     <link rel="stylesheet" type="text/css" href="static/css/styles.min.css"/>
     <script>
         /* we want to remove the nojs class as soon as possible on page load */
@@ -93,6 +94,10 @@
 	        			<li>This is still a list, containing some more words, that you are free to read at your own leisure.</li>
 	        		</ul>
 	        		<p>This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. </p>
+	        		<ol class="standard">
+	        			<li>This is a list.</li>
+	        			<li>This is still a list, containing some more words, that you are free to read at your own leisure.</li>
+	        		</ol>
 	        		<p>This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. </p>
 	        		<h2>A heading</h2>
 	        		<p>This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. </p>
@@ -102,6 +107,39 @@
 	        			<p>This is a quote...</p>
 	        			<cite>Some person, some time</cite>
 	        		</blockquote>
+	        		<p>This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. This is a paragraph of text. </p>
+	        		<p>Code example:</p>
+<pre class="prettyprint"><code>&lt;script&gt;
+$(document).ready(function(){
+    $('.example1').circles({
+        targetPos: 200
+    });
+});
+&lt;/script&gt;
+</code></pre>
+					<p>And now a table.</p>
+					<table class="table">
+					<tr>
+						<th>Heading</th>
+						<th>Heading</th>
+						<th>Heading</th>
+					</tr>
+					<tr>
+						<td>Content</td>
+						<td>Content</td>
+						<td>Content</td>
+					</tr>
+					<tr>
+						<td>Content</td>
+						<td>Content</td>
+						<td>Content</td>
+					</tr>
+					<tr>
+						<td>Content</td>
+						<td>Content</td>
+						<td>Content</td>
+					</tr>
+					</table>
 
 	        		<div class="update">
 	        			<h2>Update</h2>
@@ -127,8 +165,7 @@
     	<div class="footerinner"></div>
     </footer>
 
-    <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
-    <!--[if lt IE 9 ]> 
+    <!--[if lt IE 9 ]>
     <script>(function() {$('body').addClass('iex');})();</script>
     <![endif]-->
     <script src="static/js/main.min.js"></script>

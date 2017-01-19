@@ -49,17 +49,23 @@
 
 /* --lists */
 
-    ul.standard {
+	ul.standard,
+	ol.standard {
         margin:0.5em 0 0.5em 1.5em;
         li {
-            padding-bottom:0.5em;
+	        padding:0.25em 0;
+	        .fontcalculate(15);
+	        line-height:1.4em;
+		}
+	}
+
+    ul.standard {
+        li {
             list-style:square;
         }
     }
     ol.standard {
-        margin:0.5em 0 0.5em 1.5em;
-        li {
-            padding-bottom:0.5em;
+		li {
             list-style:decimal;
         }
     }
@@ -73,12 +79,6 @@
             padding:0 0 0.5em 1em;
         }
     }
-    
-    li {
-        .fontcalculate(15);
-        line-height:1.4em;
-	}
-
 
 /* --other */
 
@@ -93,6 +93,14 @@
         font-size:90%;
     }
     blockquote {
+		padding:0.5em 0;
+		p {
+			.fontcalculate(20);
+		}
+		cite {
+			.fontcalculate(16);
+			font-style:italic;
+		}
     }
     hr {
         height:1px;
@@ -101,9 +109,16 @@
         border-top:solid 1px #E7E7E7;
         clear:both;
     }
+    .prettyprint {
+		padding:0.5em 0;
+		margin:0;
+	}
     code {
         padding:0 0.3em;
         font-size:1.2em;
+        &.hljs {
+			.fontcalculate(14);
+		}
     }
 
 @media @tabletWidth{
@@ -113,7 +128,10 @@
 	p {
 		.fontcalculate(14);
 	}
-    li {
-        .fontcalculate(14);
+	ul.standard,
+	ol.standard {
+		li {
+			.fontcalculate(14);
+		}
 	}
 }
