@@ -16,7 +16,7 @@
     .main {
 		padding:0.75em 0;
 		background:@black;
-		font-family:'Lato', sans-serif;
+		font-family:'Raleway', sans-serif;
 		color:@white;
     }
 
@@ -34,6 +34,7 @@
 			font-family:"Trebuchet MS",sans-serif;
 	        .fontcalculate(16);
 	        line-height:1.4em;
+	        letter-spacing:0;
 
 			&:before,
 			&:after {
@@ -100,7 +101,7 @@
 				z-index:2;
 				top:100%;
 				right:0;
-				padding:0 1.1em 0.3em 0.4em;
+				padding:0 1.6em 0.3em 0.4em;
 				background:@white;
 				.transform( translateY(-30%) );
 				font-weight:bold;
@@ -122,19 +123,22 @@
 				}
 				&:after {
 					right:0;
-					border-width:0 0 1em 1em;
+					border-width:0 0 0.3em 0.3em;
 					border-color:transparent transparent @black transparent;
 				}
 				i {
-					display:inline-block;
-					margin-left:0.2em;
-					font-size:90%;
+					position:absolute;
+					top:-1px;
+					right:0.4em;
+					font-size:120%;
+					line-height:0.9em;
 					.transition( all @transpeed );
 					.transform-origin( 50% 50% );
+					vertical-align:bottom;
 				}
 				&:hover {
 					i {
-						.transform( translateX(50%) scale(1.2) );
+						.transform( translateX(40%) );
 					}
 				}
 			}
@@ -180,23 +184,18 @@
 		.tags {
 			position:relative;
 			z-index:1;
-			padding:0.4em 120px 0.4em 2.2em;
-			margin:0 20px 0 10px;
+			padding:0.3em 120px 0.4em 2.2em;
+			margin:0 10px 0 10px;
 			background:#dddddd;
 			box-shadow:0 13px 20px -15px #444 inset;
 			
-			&.fullwidth {
-				padding-right:2.2em;
-				margin-right:10px;
-			}
-
 			&:before,
 			&:after {
 				content:"";
 				position:absolute;
 				bottom:0;
 				border-style:solid;
-				border-width:0.5em;
+				border-width:0.3em;
 			}
 			&:before {
 				left:0;
