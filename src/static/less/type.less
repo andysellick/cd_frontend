@@ -55,10 +55,10 @@
 	ul.standard,
 	ol.standard {
         margin:0.5em 0 0.5em 1.5em;
+        .fontcalculate(15);
+        line-height:1.4em;
         li {
 	        padding:0.25em 0;
-	        .fontcalculate(15);
-	        line-height:1.4em;
 		}
 	}
 
@@ -73,13 +73,15 @@
         }
     }
 
-    dl.standard {
-        margin-bottom:0.5em;
+    dl {
+        margin:0.5em 0;
+        .fontcalculate(15);
         dt {
+	        padding:0.25em 0;
             font-weight:bold;
         }
         dd {
-            padding:0 0 0.5em 1em;
+	        padding:0.25em 0 0.25em 1em;
         }
     }
 
@@ -107,7 +109,7 @@
     }
     hr {
         height:1px;
-        margin:0 0 0.5em 0;
+        margin:0.5em 0;
         border:0;
         border-top:solid 1px #E7E7E7;
         clear:both;
@@ -128,13 +130,10 @@
 }
 
 @media @mobileWidth{
-	p {
-		.fontcalculate(14);
-	}
+	p,
 	ul.standard,
-	ol.standard {
-		li {
-			.fontcalculate(14);
-		}
+	ol.standard,
+	dl {
+		.fontcalculate(14);
 	}
 }
