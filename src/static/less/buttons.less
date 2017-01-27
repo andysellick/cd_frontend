@@ -1,8 +1,8 @@
 /* --buttons */
     /* button variables */
-    @btnhorzpadding: 0.5em; /* left and right padding for buttons */
+    @btnhorzpadding: 1em; /* left and right padding for buttons */
     @btnfontsize: 1em; /* button font size */
-    @btnlineheight: 1.7em; /* used to control the vertical padding of buttons, should therefore be larger than btnfontsize */
+    @btnlineheight: 1.8em; /* used to control the vertical padding of buttons, should therefore be larger than btnfontsize */
 
     /* almost! managed to normalise the heights across IEs, FF and everyone else */
     input.btn {
@@ -21,15 +21,19 @@
         margin:0;
         .border-box();
         border:0;
-        background:#DDD;
-        color:#666;
+        border-bottom:solid 0.2em @orangeDark;
+        background:@orange;
+        .vertical-gradient(@orangeLight,0%,@orange,100%);
+        border-radius:0.2em;
+        .transition( background @transpeed );
+        color:@white;
         outline:0;
         cursor:pointer;
         text-align:center;
         text-decoration:none;
         font-size:@btnfontsize;
         vertical-align:middle;
-        font-family:Arial,Helvetica;
+        font-family:'Raleway', sans-serif;
         border-collapse:separate; //fix for IE9
         overflow:visible; //fix for IE7
 
@@ -42,9 +46,16 @@
             font-size:@btnfontsize * 1.4;
         }
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
+	        .vertical-gradient(@orangeDark,0%,@orange,100%);
+	        border:0;
+	        border-top:solid 0.2em @orangeDark;
             text-decoration:none;
+            color:@white;
         }
+
         &.btn-block {
             display:block;
             width:100%;
@@ -60,10 +71,16 @@
         }
 
         &.btn-primary {
-            color:#840100;
-        }
-        &.btn-secondary {
-            color:#2a3189;
+	        border-bottom:solid 0.2em @blueDark;
+	        background:@blue;
+	        .vertical-gradient(@blueLight,0%,@blue,100%);
+	        &:hover,
+	        &:focus,
+	        &:active {
+		        .vertical-gradient(@blueDark,0%,@blue,100%);
+		        border:0;
+		        border-top:solid 0.2em @blueDark;
+			}
         }
     }
 
