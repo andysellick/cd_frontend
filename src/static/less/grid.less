@@ -1,7 +1,7 @@
 /*== GRID GENERATOR ==*/
 
 /* GRID VARIABLES */
-	@gridWidth: 1037px; //set to maximum page width required
+	@gridWidth: 1038px; //set to maximum page width required
 	@gridSpacing: 20; //spacing between columns required
 	@numCols: 12; //number of columns required
 	@fixedspacing: 20px; //used for fixed spacing grid
@@ -143,7 +143,36 @@
         /* end reverse layout */
     }
 
+    .contentwrapper {
+		.flex;
+		.flex-direction(row);
+		.justify-content(space-between);
+
+	    .maincolumn {
+			width:66%;
+		}
+		.sidecolumn {
+			.flex;
+			.flex-direction(column);
+			.justify-content(space-between);
+			width:31%;
+		}
+	}
+
+
 @media @tabletWidth{
+    .contentwrapper {
+		.flex-direction(column);
+
+	    .maincolumn {
+			width:100%;
+		}
+		.sidecolumn {
+			width:100%;
+			padding-bottom:1em;
+		}
+	}
+
 }
 
 @media @mobileWidth{
@@ -213,4 +242,5 @@
             }
         }
     }
+
 }

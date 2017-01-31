@@ -92,6 +92,10 @@
         padding:0.5em 0;
         .fontcalculate(15);
         line-height:1.4em;
+        &.intro {
+			font-style:italic;
+			.fontcalculate(16);
+		}
     }
     small,
 	.small {
@@ -122,7 +126,18 @@
         padding:0 0.3em;
         font-size:1.2em;
         &.hljs {
+			position:relative;
 			.fontcalculate(14);
+			&:after {
+				content:"";
+				position:absolute;
+				bottom:0;
+				right:0;
+				height:1em;
+				border-style:solid;
+				border-width:0.5em;
+				border-color:transparent @white @white transparent;
+			}
 		}
     }
 
@@ -130,10 +145,15 @@
 }
 
 @media @mobileWidth{
-	p,
 	ul.standard,
 	ol.standard,
 	dl {
 		.fontcalculate(14);
+	}
+	p {
+		.fontcalculate(14);
+		&.intro {
+			.fontcalculate(15);
+		}
 	}
 }
