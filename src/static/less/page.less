@@ -17,6 +17,7 @@
 		padding:0.75em 0;
 		background:@black;
 		font-family:'Raleway', Arial, sans-serif;
+		color:@white;
     }
 
     .article {
@@ -147,7 +148,7 @@
 			.update {
 				position:relative;
 				overflow:hidden;
-				padding:0.3em 20px 1em 20px;
+				padding:0 20px 2em 20px;
 				margin:3em -20px 1em -20px;
 				background:#F1F1F1;
 				box-shadow:0 5px 5px -5px rgba(0, 0, 0, 0.5) inset, 0 -5px 5px -5px rgba(0, 0, 0, 0.5) inset;
@@ -253,7 +254,6 @@
 		display:block;
 		position:relative;
 		height:8em;
-		//overflow:hidden;
 		background:@black;
 		border:solid 1px @black;
 		.border-box;
@@ -333,7 +333,28 @@
 	.sidenotewrapper {
 		padding:1em 0;
 		.relateditem {
-			margin-bottom:1em;
+			margin-bottom:1.5em;
+		}
+	}
+	
+	.sidebar {
+		margin-bottom:2em;
+		.title {
+			padding:0.5em 0;
+			margin:0 0 0.5em 0;
+			border-bottom:solid 1px @white;
+		}
+		.content {
+			text-align:justify;
+			.fontcalculate(15);
+			a {
+				display:inline-block;
+				padding:0.3em 0;
+				color:@blueLight;
+				&:hover {
+					color:@white;
+				}
+			}
 		}
 	}
 
@@ -392,9 +413,9 @@
 		}
 	}
 	
-	.related {
+	.relatedwrapper {
 		.flex-direction(column);
-		.ritem {
+		.relateditem {
 			width:100%;
 			height:10em;
 			margin:0.5em 0;
