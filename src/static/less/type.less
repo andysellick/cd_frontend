@@ -9,6 +9,7 @@
     }
     h1,
     .h1 {
+		margin:0;
         .fontcalculate(30);
     }
     h2,
@@ -49,6 +50,32 @@
     a:focus {
     	outline:dotted 1px #000000;
     }
+    .fancylink(){
+		position:relative;
+		//display:inline-block;
+		white-space:nowrap;
+		&:after {
+			content:"";
+			position:absolute;
+			bottom:0;
+			left:0;
+			width:100%;
+			border-top:solid 1px @black;
+			.transform-origin( 50% 50% );
+			.transform( scale(0) );
+			.transition( all @transpeed );
+		}
+		&:hover {
+			&:after {
+				.transform( scale(1) );
+			}
+		}
+		&.negative {
+			&:after {
+				border-color:@white;
+			}
+		}
+	}
 
 /* --lists */
 

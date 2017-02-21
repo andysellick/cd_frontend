@@ -175,25 +175,7 @@
 				}
 			}
 			p a {
-				position:relative;
-				white-space:nowrap;
-				&:after {
-					content:"";
-					position:absolute;
-					bottom:0;
-					left:0;
-					width:100%;
-					border-top:solid 1px @black;
-					.transform-origin( 50% 50% );
-					.transform( scale(0) );
-					.transition( all @transpeed );
-				}
-				&:hover {
-					&:after {
-						.transform( scale(1) );
-					}
-				}
-
+				.fancylink;
 			}
 		}
 		.tags {
@@ -241,87 +223,6 @@
 			}
 		}
 	}
-	
-	.relatedwrapper {
-		.flex;
-		.flex-direction(row);
-		.justify-content(space-between);
-		.relateditem {
-			width:49%;
-		}
-	}
-	.relateditem {
-		display:block;
-		position:relative;
-		height:8em;
-		background:@black;
-		border:solid 1px @black;
-		.border-box;
-		background-position:50% 50%;
-		background-size:cover;
-		background-repeat:no-repeat;
-		
-		&:hover {
-			color:@white;
-		}
-		&:before,
-		&:after {
-			content:"";
-			z-index:1;
-			position:absolute;
-			bottom:0;
-			right:0;
-			height:0;
-			border-style:solid;
-			border-width:0.3em;
-		}
-		&:before {
-			border-color:transparent @black @black transparent;
-		}
-		&:after {
-			margin:0 -1px -1px 0;
-			border-color:transparent @white @white transparent;
-		}
-		.rthumb {
-			position:absolute;
-			top:0;
-			left:50%;
-			max-width:none;
-			height:100%;
-			.transform(translateX(-50%));
-		}
-		.rtitle {
-			position:absolute;
-			bottom:0;
-			left:0;
-			width:100%;
-			padding:0.5em;
-			margin:0;
-			background:rgba(0,0,0,0.5);
-			.border-box;
-	        .fontcalculate(14);
-	        border-top:solid 1px @black;
-			text-shadow:0 1px 0 @black;
-		}
-
-		&.negative {
-			border-color:#AAAAAA;
-			color:#AAAAAA;
-			color:@blueLight;
-			&:hover {
-				color:@white;
-			}
-			&:after {
-				border-color:transparent @black @black transparent;
-			}
-			&:before {
-				border-color:transparent #AAAAAA #AAAAAA transparent;
-			}
-			.rtitle {
-				border-top:solid 1px #AAAAAA;
-			}
-		}
-	}
 
 	.navigation {
 		padding:0.5em 0;
@@ -331,30 +232,44 @@
 		}
 	}
 	
-	.sidenotewrapper {
-		padding:1em 0;
-		.relateditem {
-			margin-bottom:1.5em;
+	.errorpage {
+		.errorpageinner {
+			position:relative;
+			z-index:2;
+			.flex;
+			.justify-content(center);
+			.align-items(center);
+			min-height:100vh;
+			background:url('../img/header.svg') no-repeat 50% 100%;
+			border-bottom:solid 1vh @black;
+			.border-box;
 		}
-	}
-	
-	.sidebar {
-		margin-bottom:2em;
-		.title {
-			padding:0.5em 0;
-			margin:0 0 0.5em 0;
-			border-bottom:solid 1px @white;
+		.w-canvas {
+			z-index:1;
 		}
-		.content {
-			text-align:justify;
-			.fontcalculate(15);
-			a {
-				display:inline-block;
-				padding:0.3em 0;
-				color:@blueLight;
-				&:hover {
-					color:@white;
-				}
+		.noticebox {
+			padding:0 10px;
+			text-align:center;
+			.title {
+				color:@white;
+				text-shadow:0 1px 0 #aaa, 1px 2px 0 #999, 2px 3px 0 #888, 2px 3px 5px rgba(0, 0, 0, 0.7);
+			}
+			p {
+				font-family:'Raleway', Arial, sans-serif;
+			}
+			.btn {
+				box-shadow:0 0 10px rgba(0,0,0,0.2);
+			}
+		}
+
+		&.fouro {
+			.vertical-gradient(@orange, 0%, @orangeLight, 100%);
+		}
+		&.fiveh {
+			.transform( scaleY(-1) );
+			.vertical-gradient(@blue, 0%, @blueLight, 100%);
+			.noticebox {
+				.transform(rotate(180deg) rotateY(180deg)); /* simply repeating the scale to turn it the right way again causes a weird glitch with the button */
 			}
 		}
 	}
@@ -412,15 +327,5 @@
 		.btn {
 			min-width:40%;
 		}
-	}
-	
-	.relatedwrapper {
-		.flex-direction(column);
-		.relateditem {
-			width:100%;
-			height:10em;
-			margin:0.5em 0;
-		}
-	}
-	
+	}	
 }
