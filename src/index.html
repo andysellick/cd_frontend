@@ -245,15 +245,8 @@ $(document).ready(function(){
     <![endif]-->
     <script src="static/js/main.min.js"></script>
     <script>
-    	var options = {
-    		speed:2,
-    		dropDensity:5,
-    		wind:-2,
-    		dropHeight:1,
-    		dropColor:[0,0,0]
-		};
-		new weatherObj(document.getElementById('header'),options);
-		new weatherObj(document.getElementById('footer'),options);
+		makeItRain(['header','footer']);
+		hljs.initHighlightingOnLoad();
     </script>
 
 </body>

@@ -45,7 +45,8 @@
 		<div class="errorpageinner">
 			<div class="noticebox">
 				<h1 class="title">Oops</h1>
-				<p>Something just went very wrong. Are you okay? Sorry about that.</p>
+				<p>Something just went very wrong. Are you okay?</p>
+				<p>Try going back to the homepage. I'm sure it'll be alright.</p>
 				<p>
 					<a href="/" class="btn btn-primary">Home</a>
 				</p>
@@ -55,14 +56,7 @@
 
     <script src="static/js/main.min.js"></script>
     <script>
-    	var options = {
-    		speed:5,
-    		dropDensity:15,
-    		wind:-2,
-    		dropHeight:1,
-    		dropColor:[0,0,0]
-		};
-		new weatherObj(document.getElementById('errorpage'),options);
+		makeItRain(['errorpage']);
     </script>
 </body>
 </html>

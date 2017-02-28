@@ -44,8 +44,9 @@
 	<main class="errorpage fouro" id="errorpage">
 		<div class="errorpageinner">
 			<div class="noticebox">
-				<h1 class="title">404</h1>
-				<p>We couldn't find the page you were looking for. Sorry. Maybe it's somewhere else?</p>
+				<h1 class="title">Page not found</h1>
+				<p>Sorry, but we can't find that page. We looked really hard, too.</p>
+				<p>Maybe it's somewhere else?</p>
 				<p>
 					<a href="/" class="btn">Home</a>
 				</p>
@@ -55,14 +56,7 @@
 
     <script src="static/js/main.min.js"></script>
     <script>
-    	var options = {
-    		speed:5,
-    		dropDensity:15,
-    		wind:-2,
-    		dropHeight:1,
-    		dropColor:[0,0,0]
-		};
-		new weatherObj(document.getElementById('errorpage'),options);
+		makeItRain(['errorpage']);
     </script>
 </body>
 </html>
