@@ -22,7 +22,7 @@
 
     .article {
 		padding:1em 0;
-		.title {
+		.maintitle {
 			position:relative;
 			z-index:2;
 			padding:0.2em 20px;
@@ -90,7 +90,7 @@
 				}
 			}
 	        .home {
-				padding:0.5em 0 0 0;
+				padding:1em 0 0 0;
 				line-height:1em;
 				.fontcalculate(32);
 				text-align:center;
@@ -103,9 +103,9 @@
 				z-index:2;
 				top:100%;
 				right:0;
-				padding:0 1.6em 0.3em 0.4em;
+				padding:0 1.6em 0.4em 0.4em;
 				background:@white;
-				.transform( translateY(-30%) );
+				margin-top:-0.5em;
 				font-weight:bold;
 				font-family:"Century Gothic","Trebuchet MS",sans-serif;
 				.fontcalculate(15);
@@ -220,6 +220,14 @@
 						font-family:icomoon;
 					}
 				}
+				&:after {
+					content:",";
+				}
+				&:last-child {
+					&:after {
+						content:"";
+					}
+				}				
 			}
 		}
 	}
@@ -281,7 +289,7 @@
 
 @media @mobileWidth{
 	.article {
-		.title {
+		.maintitle {
 			padding:0.2em 15px;
 			&:before,
 			&:after {
@@ -296,7 +304,7 @@
 			}
 			.more {
 				padding:0 1.5em 0.3em 0.3em;
-				.transform( translateY(-50%) );
+				margin-top:-0.75em;
 			}
 			.update {
 				padding-left:15px;
