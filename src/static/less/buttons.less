@@ -69,7 +69,15 @@
         &[disabled],
         &.disabled {
             cursor:default;
-            text-decoration:line-through;
+			background:@greyLight;
+	        border-bottom:solid 0.2em @grey;
+			color:@grey;
+	        text-shadow:none;
+			&:hover,
+			&:focus,
+			&:active {
+				border-top:0;
+			}
         }
 
         &.btn-primary {
