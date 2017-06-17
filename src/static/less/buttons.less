@@ -48,16 +48,19 @@
         }
 
         &:hover,
-        &:focus,
-        &:active {
-	        .vertical-gradient(@orangeDark,0%,@orange,100%);
-			.transform(translateY(0.2em));
-	        border:0;
-			box-shadow:0 0 0 @orangeDark;
+        &:focus {
+	        .vertical-gradient(@orange,0%,@orange,100%);
+			.transform(translateY(0.1em));
+			box-shadow:0 0.1em 0 @orangeDark;
             text-decoration:none;
 	        text-shadow:0 1px 0 rgba(0,0,0,1);
             color:@white;
         }
+        &:active {
+	        .vertical-gradient(@orangeDark,0%,@orange,100%);
+			.transform(translateY(0.2em));
+			box-shadow:0 0 0 @orangeDark;
+		}
 
         &.btn-block {
             display:block;
@@ -71,13 +74,13 @@
         &.disabled {
             cursor:default;
 			background:@greyLight;
-	        border-bottom:solid 0.2em @grey;
+			box-shadow:0 0.2em 0 @grey;
 			color:@grey;
 	        text-shadow:none;
 			&:hover,
 			&:focus,
 			&:active {
-				border-top:0;
+				.transform(none);
 			}
         }
 
@@ -86,7 +89,10 @@
 			box-shadow:0 0.2em 0 @blueDark;
 	        .vertical-gradient(@blueLight,0%,@blue,100%);
 	        &:hover,
-	        &:focus,
+	        &:focus {
+		        .vertical-gradient(@blue,0%,@blue,100%);
+				box-shadow:0 0.1em 0 @blueDark;
+			}
 	        &:active {
 		        .vertical-gradient(@blueDark,0%,@blue,100%);
 				box-shadow:0 0 0 @blueDark;
