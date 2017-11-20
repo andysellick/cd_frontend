@@ -36,6 +36,7 @@ var gulp = require('gulp'),
         camelize: true
     }),
     browserSync = $.browserSync.create(),
+    axe = require('gulp-axe-webdriver'),
     copyFiles = {
         scripts: []
     };
@@ -154,8 +155,26 @@ gulp.task('generateFiles', function () {
 	.pipe(gulp.dest(paths.templates.dest + 'files/'))
 });
 
+/* Check HTML using aXe, https://github.com/alphagov/govuk-frontend/blob/master/tasks/gulp/test-components.js */
+gulp.task('axe', (done) => {
+  let options = {
+    browser: 'phantomjs',
+    saveOutputIn: 'axeReport.json',
+    urls: ['src/*.html'],
+    // https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md
+    a11yCheckOptions: {
+      'rules': {
+        'document-title': { 'enabled': false }, // Ensures each HTML document contains a non-empty <title> element
+        'html-has-lang': { 'enabled': false },  // Ensures every HTML document has a lang attribute
+        'bypass': { 'enabled': false }          // Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content
+      }
+    }
+  }
+  return axe(options, done)
+});
+
 /* BrowserSync */
-gulp.task('browser-sync', ['styles', 'scripts', 'images', 'copyHtml', 'copyAssets', 'copyBowerStuff'], function() {
+gulp.task('browser-sync', ['styles', 'scripts', 'images', 'copyHtml', 'copyAssets', 'copyBowerStuff', 'axe'], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/"
