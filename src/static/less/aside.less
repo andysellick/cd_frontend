@@ -8,7 +8,7 @@
 	
 	.sidebar {
 		margin-bottom:2em;
-		overflow:hidden;
+
 		.title {
 			padding:0.5em 0;
 			margin:0 0 0.5em 0;
@@ -19,13 +19,17 @@
 			margin:0 -@outerspacing;
 			text-align:justify;
 			.fontcalculate(15);
+
 			a {
 				display:inline-block;
 				padding:0.4em 0;
 				margin:0 @outerspacing;
 				.fancylink;
 				color:@blueLight;
-				&:hover {
+
+				&:hover,
+				&:focus,
+				&:active {
 					color:@white;
 				}
 				&:after {
@@ -43,6 +47,7 @@
 			width:49%;
 		}
 	}
+
 	.relateditem {
 		display:block;
 		position:relative;
@@ -54,10 +59,23 @@
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-image:url('../img/relateditem_default.jpg');
-		
+
 		&:hover {
-			color:@white;
+			.rtitle {
+				color:@white;
+			}
 		}
+
+		&:focus,
+		&:active {
+			.linkoutline;
+			outline-offset: 0;
+
+			.rtitle {
+				color:@white;
+			}
+		}
+
 		&:before,
 		&:after {
 			content:"";

@@ -45,16 +45,20 @@
         color:@orange;
         .transition( all @transpeed );
     }
+
     a:hover {
         color:@black;
     }
-    a:focus {
-    	outline:dotted 1px #000000;
+
+    a:focus,
+	a:active {
+    	outline:dotted 1px #FFFFFF;
     }
+
     .fancylink(){
 		position:relative;
-		//display:inline-block;
 		white-space:nowrap;
+
 		&:after {
 			content:"";
 			position:absolute;
@@ -66,7 +70,10 @@
 			.transform( scale(0) );
 			.transition( all @transpeed );
 		}
-		&:hover {
+
+		&:hover,
+		&:focus,
+		&:active {
 			&:after {
 				.transform( scale(1) );
 			}

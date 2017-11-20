@@ -18,14 +18,21 @@
 			.flex-direction(row);
 			.justify-content(space-around);
 			.fontcalculate(32);
+
 			a {
 				position:relative;
 				color:@blueLight;
 				.transition(all @transpeed);
 				outline:none;
 
-				&:hover {
+				&:hover,
+				&:focus {
 					color:@white;
+
+					i {
+						.linkoutline;
+					}
+
 					.lilpopup {
 						.transform(translateX(-50%) rotateY(0deg));
 					}

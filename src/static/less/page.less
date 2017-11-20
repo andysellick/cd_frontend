@@ -68,6 +68,7 @@
 			background:@white;
 			box-shadow:0 20px 20px -15px #666 inset;
 			color:@blackLight;
+
 			.date {
 				position:absolute;
 				z-index:1;
@@ -79,6 +80,7 @@
 				color:@white;
 				font-family:"Century Gothic","Trebuchet MS",sans-serif;
 				.fontcalculate(11);
+
 				&:after {
 					content:"";
 					position:absolute;
@@ -97,9 +99,17 @@
 				line-height:1em;
 				.fontcalculate(32);
 				text-align:center;
-				a:hover {
-					text-decoration:none;
+
+				a {
+					&:hover,
+					&:focus,
+					&:active {
+						text-decoration:none;
+						.linkoutline;
+						outline-offset: 0;
+					}
 				}
+
 			}
 			.more {
 				position:absolute;
@@ -114,6 +124,7 @@
 				.fontcalculate(15);
 				line-height:1em;
 				text-transform:uppercase;
+
 				&:before,
 				&:after {
 					content:"";
@@ -145,6 +156,10 @@
 					i {
 						.transform( translateX(40%) );
 					}
+				}
+				&:focus,
+				&:active {
+					outline: dotted 1px @black;
 				}
 			}
 			
@@ -184,6 +199,11 @@
 			}
 			p a {
 				.fancylink;
+				
+				&:focus,
+				&:active {
+					outline: dotted 1px @black;
+				}
 			}
 		}
 		.tags {
@@ -217,6 +237,7 @@
 				margin-right:0.2em;
 				.fontcalculate(14);
 				color:@black;
+
 				&:first-child {
 					&:before {
 						content:"\e901";
@@ -239,6 +260,11 @@
 				a {
 					.fancylink;
 					color: @black;
+					
+					&:focus,
+					&:active {
+						outline: dotted 1px @black;
+					}
 				}
 			}
 		}
