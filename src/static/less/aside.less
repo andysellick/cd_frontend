@@ -110,18 +110,20 @@
 			padding:0.5em;
 			margin:0;
 			background:rgba(0,0,0,0.7);
+			.transition( all @transpeed );
 			.border-box;
 	        .fontcalculate(14);
 	        border-top:solid 1px @black;
 			text-shadow:0 1px 0 @black;
 			letter-spacing:1px;
+			color: @orange;
 		}
 
 		&.negative {
 			border-color:#AAAAAA;
 			color:#AAAAAA;
 			color:@blueLight;
-			&:hover {
+			&:hover .rtitle {
 				color:@white;
 			}
 			&:after {
@@ -132,6 +134,7 @@
 			}
 			.rtitle {
 				border-top:solid 1px #AAAAAA;
+				color: @blueLight;
 			}
 		}
 	}

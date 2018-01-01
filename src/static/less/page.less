@@ -101,12 +101,16 @@
 				text-align:center;
 
 				a {
+					.transition( color @transpeed );
 					&:hover,
 					&:focus,
 					&:active {
 						text-decoration:none;
-						.linkoutline;
 						outline-offset: 0;
+					}
+
+					&:focus {
+						.linkoutline;
 					}
 				}
 
