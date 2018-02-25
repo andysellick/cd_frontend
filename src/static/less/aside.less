@@ -74,6 +74,10 @@
 			.rtitle {
 				color:@white;
 			}
+			
+			&:after {
+				border-color:transparent @yellow @yellow transparent;
+			}
 		}
 
 		&:before,
@@ -123,6 +127,7 @@
 			border-color:#AAAAAA;
 			color:#AAAAAA;
 			color:@blueLight;
+
 			&:hover .rtitle {
 				color:@white;
 			}
@@ -135,6 +140,17 @@
 			.rtitle {
 				border-top:solid 1px #AAAAAA;
 				color: @blueLight;
+			}
+			
+			&:focus,
+			&:active {
+				.rtitle {
+					color: @white;
+				}
+				
+				&:after {
+					border-color:transparent @yellow @yellow transparent;
+				}
 			}
 		}
 	}
