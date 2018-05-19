@@ -14,6 +14,7 @@
 		}
 
 		.biglinks {
+			padding: 0 10px;
 			.flex;
 			.flex-direction(row);
 			.justify-content(space-around);
@@ -46,7 +47,7 @@
 					bottom:100%;
 					left:50%;
 					padding:0.5em;
-					min-width:80px;
+					min-width:60px;
 					margin-bottom:5px;
 					border-radius:2px;
 					box-shadow:0 5px 5px rgba(0,0,0,0.5);
@@ -75,8 +76,10 @@
 
 
 	.footer {
+		overflow: hidden;
 		.transform( scaleY(-1) );
 		.vertical-gradient(@blue, 0%, @blueLight, 100%);
+
 		.footerinner {
 			min-height:100px;
 			background:url('../img/header.svg') no-repeat 50% 100%;
