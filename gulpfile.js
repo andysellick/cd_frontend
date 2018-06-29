@@ -68,9 +68,7 @@ gulp.task('less:main', function() {
 /* JS */
 gulp.task('scripts', ['scripts:moveFiles'], function() {
   return gulp.src([
-        paths.scripts.src + '*.js',
-        '!' + paths.scripts.src + 'highlight.pack.js',
-        '!' + paths.scripts.src + 'portfolio.min.js',
+        paths.scripts.src + '*.js'
     ])
     .pipe($.plumber(function(error) {
         $.util.log($.util.colors.red('Error (' + error.plugin + '): ' + error.message));
