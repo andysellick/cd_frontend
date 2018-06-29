@@ -1,4 +1,8 @@
-
+function getRandomInt(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
 
 //given an array of ids, start the weather plugin on those elements
 function makeItRain(elements){
@@ -12,10 +16,4 @@ function makeItRain(elements){
 	for(var i = 0; i < elements.length; i++){
 		new weatherObj(document.getElementById(elements[i]),options);
 	}
-}
-
-function getRandomInt(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min;
 }

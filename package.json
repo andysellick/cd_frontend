@@ -39,6 +39,7 @@
     "stream-combiner2": "^1.0.2"
   },
   "dependencies": {
-    "gulp-axe-webdriver": "^1.4.0"
+    "gulp-axe-webdriver": "^1.4.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }
