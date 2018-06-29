@@ -1,3 +1,4 @@
+// https://github.com/sindresorhus/gulp-imagemin/issues/236#issuecomment-274221796
 var basePaths = {
     src: 'src/',
     dest: 'dist/',
@@ -36,7 +37,7 @@ var gulp = require('gulp'),
         camelize: true
     }),
     browserSync = $.browserSync.create(),
-    axe = require('gulp-axe-webdriver'),
+    //axe = require('gulp-axe-webdriver'),
     copyFiles = {
         scripts: []
     };
@@ -178,7 +179,7 @@ gulp.task('axe', (done) => {
 });
 
 /* BrowserSync */
-gulp.task('browser-sync', ['styles', 'scripts', 'images', 'copyHtml', 'copyAssets', 'copyBowerStuff', 'axe'], function() {
+gulp.task('browser-sync', ['styles', 'scripts', 'images', 'copyHtml', 'copyAssets', 'copyBowerStuff'], function() {
     browserSync.init({
         server: {
             baseDir: "./dist/"
