@@ -15,20 +15,18 @@
     }
 
     .btn {
+        position: relative;
         display:inline-block;
         padding:0 @btnhorzpadding;
         line-height:@btnlineheight;
         margin:0 0 0.2em 0;
         .border-box();
         border:0;
-		box-shadow:0 0.2em 0 @orangeDark;
+        border-bottom: solid 0.2em @orange;
         background:@orange;
-        .vertical-gradient(@orangeLight,0%,@orange,100%);
-        border-radius:0.2em;
         text-shadow:0 1px 1px rgba(0,0,0,0.8);
-        .transition( all @transpeed / 2 );
+        //.transition( all @transpeed / 2 );
         color:@white;
-        outline:0;
         cursor:pointer;
         text-align:center;
         text-decoration:none;
@@ -37,7 +35,27 @@
         font-family:'Raleway', sans-serif;
         border-collapse:separate; //fix for IE9
         overflow:visible; //fix for IE7
-        outline: solid transparent 3px; // to reduce transition on focus
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 0.2em;
+            background: @orangeLight;
+        }
+
+        &:after {
+            content:"";
+            position:absolute;
+            top: 100%;
+            left:50%;
+            width:0%;
+            height: 0.2em;
+            background: @orangeDark;
+            .transition( all @transpeed );
+        }
 
         &.btn-small {
             font-size:@btnfontsize * 0.9;
@@ -50,21 +68,14 @@
 
         &:hover,
         &:focus {
-	        .vertical-gradient(@orange,0%,@orange,100%);
-			.transform(translateY(0.1em));
-			box-shadow:0 0.1em 0 @orangeDark;
-            text-decoration:none;
-	        text-shadow:0 1px 0 rgba(0,0,0,1);
-            color:@white;
-			outline: 0;
+            &:after {
+                left: 0;
+                width: 100%;
+            }
         }
+
         &:focus {
 			.linkoutline;
-		}
-        &:active {
-	        .vertical-gradient(@orangeDark,0%,@orange,100%);
-			.transform(translateY(0.2em));
-			box-shadow:0 0 0 @orangeDark;
 		}
 
         &.btn-block {
@@ -79,31 +90,32 @@
         &.disabled {
             cursor:default;
 			background:@greyLight;
-			box-shadow:0 0.2em 0 @grey;
 			color:@grey;
 	        text-shadow:none;
-			&:hover,
-			&:focus,
-			&:active {
-				.transform(none);
-			}
+
+            &:before {
+                background: @greyDark;
+            }
+
+            &:after {
+                display: none;
+            }
         }
 
         &.btn-primary {
 	        background:@blue;
-			box-shadow:0 0.2em 0 @blueDark;
-	        .vertical-gradient(@blueLight,0%,@blue,100%);
-	        &:hover,
-	        &:focus {
-		        .vertical-gradient(lighten(@blue,10%),0%,@blue,100%);
-				box-shadow:0 0.1em 0 @blueDark;
-			}
-	        &:active {
-		        .vertical-gradient(@blueDark,0%,lighten(@blue,10%),100%);
-				box-shadow:0 0 0 @blueDark;
-			}
+            border-color: @blue;
+            color: @white;
+
+            &:before {
+                background: @blueLight;
+            }
+
+            &:after {
+                background: @blueDark;
+            }
         }
-        
+
         i {
 			vertical-align:middle; //for icons
 		}
