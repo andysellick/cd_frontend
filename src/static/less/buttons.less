@@ -85,15 +85,17 @@ input.btn {
 			text-align:center;
 		}
 	}
+
 	&[disabled],
 	&.disabled {
 		cursor:default;
-		background:@greyLight;
-		color:@grey;
+		background:@grey;
+		border-color: @grey;
+		color:@greyDark;
 		text-shadow:none;
 
 		&:before {
-			background: @greyDark;
+			background: @greyLight;
 		}
 
 		&:after {
