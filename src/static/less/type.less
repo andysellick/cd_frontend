@@ -150,20 +150,28 @@ p {
 	padding:0.5em 0;
 	.fontcalculate(15);
 	line-height:1.5em;
+
 	&.intro {
 		font-style:italic;
 		.fontcalculate(16);
 	}
 }
+
 small,
 .small {
 	font-size:90%;
 }
+
 blockquote {
-	padding:0.5em 0;
+	position: relative;
+	padding:0.5em;
+	background: @greyLight;
+	border-top: solid 1px @grey;
+
 	p {
-		.fontcalculate(20);
+		.fontcalculate(16);
 	}
+
 	cite {
 		display:block;
 		padding:0.5em 0;
@@ -171,6 +179,7 @@ blockquote {
 		font-style:italic;
 	}
 }
+
 hr {
 	height:1px;
 	margin:0.5em 0;
@@ -178,16 +187,20 @@ hr {
 	border-top:solid 1px #E7E7E7;
 	clear:both;
 }
+
 .prettyprint {
 	padding:0.5em 0;
 	margin:0;
 }
+
 code {
 	padding:0 0.3em;
 	font-size:1.2em;
+
 	&.hljs {
 		position:relative;
 		.fontcalculate(13);
+
 		&:after {
 			content:"";
 			position:absolute;
