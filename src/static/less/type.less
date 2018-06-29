@@ -165,11 +165,14 @@ small,
 blockquote {
 	position: relative;
 	padding:0.5em;
+	margin: 0.5em 0;
 	background: @greyLight;
 	border-top: solid 1px @grey;
+	border-bottom: solid 1px @grey;
+	font-family: Georgia;
 
 	p {
-		.fontcalculate(16);
+		.fontcalculate(17);
 	}
 
 	cite {
@@ -256,6 +259,12 @@ pre {
 	p {
 		.fontcalculate(14);
 		&.intro {
+			.fontcalculate(15);
+		}
+	}
+	
+	blockquote {
+		p {
 			.fontcalculate(15);
 		}
 	}
