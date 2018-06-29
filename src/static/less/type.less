@@ -16,12 +16,35 @@ h1,
 }
 h2,
 .h2 {
+	position: relative;
 	.fontcalculate(20);
 	line-height:1.4em;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -10%;
+		left: -20px;
+		height: 120%;
+		.border-box;
+		border-style: solid;
+		border-color: transparent transparent transparent @black;
+		border-width: 0.3em 0.35em;
+	}
 }
 h3,
 .h3 {
 	.fontcalculate(16);
+
+	&:before {
+		content: "";
+		float: left;
+		display: inline-block;
+		margin-right: 0.5em;
+		width: 1em;
+		height: 1em;
+		background: @orange;
+	}
 }
 h4,
 .h4 {
