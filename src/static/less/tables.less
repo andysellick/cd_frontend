@@ -1,32 +1,30 @@
-/* --tables */
+.table {
+    width:100%;
+    margin:0.5em 0;
+    border-collapse:collapse;
 
-    .table {
-        width:100%;
-        margin:0.5em 0;
-        border-collapse:collapse;
-        th,
-		td {
-            padding:0.4em 1em;
-            border-left:1px dotted #ccc;
-            vertical-align:top;
-            text-align:left;
-            .fontcalculate(15);
-            &:first-child {
-				border:0;
-			}
-        }
-        th {
-			background:#F1F1F1;
-			background:@orangeLight;
-			font-weight:bold;
-			color:@white;
+    th,
+	td {
+        padding:0.4em 1em;
+        border-left:1px dotted #ccc;
+        vertical-align:top;
+        text-align:left;
+        .fontcalculate(15);
+        &:first-child {
+			border:0;
 		}
-        tr {
-			border-bottom:1px solid #ccc;
-        }
     }
 
-@media @tabletWidth{
+    th {
+		background:#F1F1F1;
+		background:@orangeLight;
+		font-weight:bold;
+		color:@white;
+	}
+
+    tr {
+		border-bottom:1px solid #ccc;
+    }
 }
 
 @media @mobileWidth{

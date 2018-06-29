@@ -1,73 +1,70 @@
 /*== GRID GENERATOR ==*/
 
 /* GRID VARIABLES */
-	@gridWidth: 1008px; //set to maximum page width required
-	@gridSpacing: 20; //spacing between columns required
-	@numCols: 12; //number of columns required
-	@fixedspacing: 20px; //used for fixed spacing grid
+@gridWidth: 1008px; //set to maximum page width required
+@gridSpacing: 20; //spacing between columns required
+@numCols: 12; //number of columns required
+@fixedspacing: 20px; //used for fixed spacing grid
 
-	@percentColGutter: percentage(@gridSpacing / @gridWidth);
-	@percentColWidth: percentage(((@gridWidth - (@gridSpacing * (@numCols - 1))) / @numCols) / @gridWidth);
-	@fixedColWidth: percentage((@gridWidth / @numCols) / @gridWidth);
+@percentColGutter: percentage(@gridSpacing / @gridWidth);
+@percentColWidth: percentage(((@gridWidth - (@gridSpacing * (@numCols - 1))) / @numCols) / @gridWidth);
+@fixedColWidth: percentage((@gridWidth / @numCols) / @gridWidth);
 
 
 /* GRID MIXINS - used to construct the grid */
-	/* indent calculation mixin */
-	.offset(@multiply, @add:0){
-		margin-left:(@percentColWidth * @multiply) + (@percentColGutter * @multiply) + (@percentColGutter * @add);
-	}
-	/* fixed indent calculation mixin */
-	.fixedOffset(@multiply){
-		margin-left:(@fixedColWidth * @multiply);
-	}
-	/* reverse indent - works in reverse, unsurprisingly */
-	.reverseOffset(@multiply, @add:0){
-		margin-right:(@percentColWidth * @multiply) + (@percentColGutter * @multiply) + (@percentColGutter * @add);
-	}
+/* indent calculation mixin */
+.offset(@multiply, @add:0){
+	margin-left:(@percentColWidth * @multiply) + (@percentColGutter * @multiply) + (@percentColGutter * @add);
+}
+/* fixed indent calculation mixin */
+.fixedOffset(@multiply){
+	margin-left:(@fixedColWidth * @multiply);
+}
+/* reverse indent - works in reverse, unsurprisingly */
+.reverseOffset(@multiply, @add:0){
+	margin-right:(@percentColWidth * @multiply) + (@percentColGutter * @multiply) + (@percentColGutter * @add);
+}
 
 /* base grid styles */
-    /* IE8 will ignore border box when max/min width applied, solution is to create a wrapper for container and give that the max width and margin below */
-    .container {
-        margin:0 auto;
-        padding:0 10px;
-        .border-box();
-        max-width:@gridWidth;
-    }
+/* IE8 will ignore border box when max/min width applied, solution is to create a wrapper for container and give that the max width and margin below */
+.container {
+	margin:0 auto;
+	padding:0 10px;
+	.border-box();
+	max-width:@gridWidth;
+}
 
-    .contentwrapper {
-		.flex;
-		.flex-direction(row);
-		.justify-content(space-between);
+.contentwrapper {
+	.flex;
+	.flex-direction(row);
+	.justify-content(space-between);
 
-	    .maincolumn {
-			width:68%;
-		}
-		.sidecolumn {
-			.flex;
-			.flex-direction(column);
-			.justify-content(space-between);
-			width:29%;
-		}
+	.maincolumn {
+		width:68%;
 	}
+
+	.sidecolumn {
+		.flex;
+		.flex-direction(column);
+		.justify-content(space-between);
+		width:29%;
+	}
+}
 
 
 @media @tabletWidth{
-    .contentwrapper {
+	.contentwrapper {
 		max-width: 670px;
 		margin: 0 auto;
 		.flex-direction(column);
 
-	    .maincolumn {
+		.maincolumn {
 			width:100%;
 		}
+
 		.sidecolumn {
 			width:100%;
 			padding-bottom:1em;
 		}
 	}
-
-}
-
-@media @mobileWidth{
-
 }
