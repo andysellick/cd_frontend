@@ -131,15 +131,22 @@ ol.standard {
 	}
 }
 
-dl {
+dl.standard {
 	margin:0.5em 0;
 	.fontcalculate(15);
+
 	dt {
-		padding:0.25em 0;
+		padding:0 0 0.25em 0;
 		font-weight:bold;
 	}
 	dd {
-		padding:0.25em 0 0.25em 1em;
+		padding:0.25em 0;
+		.fontcalculate(15);
+		line-height:1.5em;
+		
+		& + dt {
+			padding-top: 0.75em;
+		}
 	}
 }
 
