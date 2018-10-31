@@ -12,19 +12,15 @@
 
 .footnote {
 	padding-bottom:2em;
-	max-width:320px;
+	max-width:270px;
 	margin-left:auto;
 	margin-right:auto;
 	color:@white;
-	.disclaimer {
-		.fontcalculate(11);
-
-		dd {
-			text-align:right;
-		}
-	}
 
 	.biglinks {
+		max-width: 260px;
+		margin-left: auto;
+		margin-right: auto;
 		.flex;
 		.flex-direction(row);
 		.justify-content(space-around);
@@ -83,6 +79,19 @@
 				}
 			}
 		}
+	}
+}
+
+.disclaimer {
+	.fontcalculate(11);
+
+	dt {
+		margin: 0.75em 0 0.5em 0;
+	}
+
+	dd {
+		padding-left: 1em;
+		text-align:right;
 	}
 }
 
