@@ -36,7 +36,7 @@ h2,
 h3,
 .h3 {
 	position: relative;
-	.fontcalculate(16);
+	.fontcalculate(18);
 
 	&:before {
 		content: "";
@@ -50,7 +50,7 @@ h3,
 }
 h4,
 .h4 {
-	.fontcalculate(14);
+	.fontcalculate(16);
 	font-style:italic;
 }
 h5,
@@ -114,8 +114,9 @@ a:active {
 ul.standard,
 ol.standard {
 	margin:0.5em 0 0.5em 1.5em;
-	.fontcalculate(15);
-	line-height:1.4em;
+	.fontcalculate(16);
+	line-height:1.5em;
+
 	li {
 		padding:0.25em 0;
 	}
@@ -156,7 +157,7 @@ dl.standard {
 p {
 	margin:0px;
 	padding:0.5em 0;
-	.fontcalculate(15);
+	.fontcalculate(16);
 	line-height:1.5em;
 
 	&.intro {
@@ -263,6 +264,8 @@ pre {
 	}
 	p {
 		.fontcalculate(14);
+		text-align: justify;
+
 		&.intro {
 			.fontcalculate(15);
 		}
